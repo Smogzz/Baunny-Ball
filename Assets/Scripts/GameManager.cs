@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
        //is the game over?
+        if (gameOver == true)
+        {
+            GameOver();
+        }
     }
 
     void GameOver() {
@@ -19,4 +23,6 @@ public class GameManager : MonoBehaviour
         winnerUI.SetActive(true);
         gameObject.SetActive(false);
     }
+
 }
+
