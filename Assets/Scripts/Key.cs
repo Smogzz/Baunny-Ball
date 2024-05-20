@@ -16,7 +16,11 @@ public class Key : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) {
-            gameManager.gameOver = true;
+            gameManager.currentLevel++;
+            if (gameManager.currentLevel > 2)
+            { 
+                gameManager.gameOver = true;
+            }
             Instantiate(shockwavePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
         }
